@@ -1,0 +1,13 @@
+.MovieRating {
+    position: relative;
+    font-size: 3vw;
+    width: fit-content;
+    -webkit-background-clip: text;
+    color: transparent
+}
+.RatingContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

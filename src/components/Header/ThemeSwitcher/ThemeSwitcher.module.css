@@ -1,0 +1,55 @@
+.Container{
+    font-size: 10pt;
+    width: 4em;
+    height: 2em;
+    padding: .3em;
+    position: relative;
+    border-radius: 2em;
+    cursor: pointer;
+    box-shadow: inset 0 0 10px 3px rgba(0, 0, 0, 0.5);
+}
+
+.Button{
+    background: #F8F9FA;
+    height: 2em;
+    width: 2em;
+    position: absolute;
+    border-radius: 50%;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+    box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.Button.dark{
+    animation-name: slideLeft;
+    background: #5c5cff;
+}
+.Button.light{
+    animation-name: slideRight;
+    background: #ffff80;
+}
+
+.Container.dark{
+
+}
+.Container.light{
+
+}
+
+@keyframes slideLeft {
+    0%{
+        left: 2.3em;
+    }
+    100%{
+        left: .3em;
+    }
+}
+
+@keyframes slideRight {
+    0%{
+        left: .3em;
+    }
+    100%{
+        left: 2.3em;
+    }
+}

@@ -1,0 +1,99 @@
+.TrendingPanel{
+   margin: 0 auto;
+   width: 90vw;
+   font-size: 18pt;
+}
+
+
+.TrendingContent{
+   height:90vh;
+   display: flex;
+   margin: 0 auto;
+   overflow-x: auto;
+   position: relative; z-index: -1;
+}
+
+.TrendingContent::-webkit-scrollbar {
+   width: 0; /* Hide the default scrollbar width */
+}
+
+/* Optional: Customize scrollbar track and thumb appearance */
+.TrendingContent::-webkit-scrollbar-track {
+   background-color: transparent; /* Set scrollbar track color */
+}
+
+.TrendingContent::-webkit-scrollbar-thumb {
+   background-color: transparent; /* Set scrollbar thumb color */
+}
+
+.TrendingContent>div{
+   position: absolute;
+   transition-duration: .8s;
+}
+
+.TrendingUnit{
+   position: relative;
+}
+.TrendingUnit>div{
+   position: absolute;
+   width: 30vw;
+   top:40vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: start;
+   color: #F8F9FA;
+   padding: 0 5vw;
+}
+
+.TrendingUnit>img{
+   position: absolute;
+   width: 90vw;
+   object-fit: cover;
+   mask-image: linear-gradient(90deg, transparent, white,transparent);
+}
+
+.pages{
+   display: flex;
+   margin: 0 auto;
+   width: 20vw;
+   justify-content: space-around;
+   position: absolute;
+   top:95vh;
+   left: 50%;
+   transform: translateX(-50%);
+}
+.pages>div{
+   font-size: 4pt;
+   height: 4em;
+   width: 4em;
+   border-radius: 50%;
+   background: rgba(248, 249, 250, 0.8);
+   transition-duration: .7s;
+   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+   cursor: pointer;
+}
+.pages>div:hover{
+   background: #9f0000;
+   transform: translateY(-.25vh);
+}
+.pages>div.selected{
+   background: rgba(159, 0, 0, 0.5);
+   transform: translateY(-.5vh);
+}
+.UnitButton{
+   background: #F8F9FA;
+   color: #3f3f3f;
+   width: 10vw;
+   text-align: center;
+   padding: 2vh 1vw;
+   margin: 4vh 0;
+   cursor: pointer;
+   border-radius: 10px;
+   transition-duration: .7s;
+}
+.UnitButton:hover{
+   transform: translateY(-1vh);
+   background: rgba(159, 0, 0, 0.5);
+   color: #F8F9FA;
+}

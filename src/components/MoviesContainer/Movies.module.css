@@ -1,0 +1,42 @@
+.MoviesContainer{
+    width: 85vw;
+    margin: -2.5vh auto;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 5;
+    padding: 2vh 2vw;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    justify-content: space-around;
+    transition-duration: .7s;
+}
+
+.MoviesContainer.dark{
+    color: #F8F9FA;
+}
+
+.MoviesContainer.light{
+    background: #F8F9FA;
+    color: #3f3f3f;
+}
+.MoviesUnit {
+    width: 15vw;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 2vh 2.5vw;
+    margin: 1.5vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 16pt;
+}
+
+.MoviesUnit>div{
+}
+
+.MoviesUnit>img{
+    width: 15vw;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-bottom: 2vh;
+}
