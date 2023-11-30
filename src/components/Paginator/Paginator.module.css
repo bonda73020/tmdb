@@ -1,0 +1,39 @@
+.Paginator{
+    width: 90vw;
+    display: flex;
+    justify-content: space-around;
+    margin: 1vh auto;
+    font-size: 30pt;
+    border: solid #9f0000;
+    outline: 2px solid #9f0000;
+    border-width: 1px 0;
+    padding: 1vh 0;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    transition-duration: .7s;
+    align-items: center;
+}
+
+.Paginator.light{
+    background: #F8F9FA;
+    color: #3f3f3f;
+}
+.Paginator.dark {
+    color: #F8F9FA;
+}
+.Paginator>div{
+    cursor: default;
+    transition-duration: .7s;
+}
+.Paginator>div.active{
+    padding: .1em;
+    border-radius: 5px;
+    outline: 2px solid #9f0000;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+.Paginator>div.active:hover{
+    color: #F8F9FA;
+    cursor: pointer;
+    transform: translateY(-.5vh);
+    background: #9f0000;
+}

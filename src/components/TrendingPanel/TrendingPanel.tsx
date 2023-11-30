@@ -1,40 +1,45 @@
 import React, {useEffect, useState} from 'react';
-import {IState} from "../../types/IStateType";
-import {IMovie} from "../../interfaces/IMovie";
-import {movieService} from "../../services/movieService";
-import {TrendUnit} from "./TrendUnit";
-import {imagesURL} from "../../constants/urls";
 import css from './TrendingPanel.module.css'
-import {useAppSelector} from "../../hooks/reduxHooks";
+import {TrendUnit} from "./TrendUnit";
+import {useAppDispatch, useAppSelector} from "../../hooks/reduxHooks";
+import {trendsActions} from "../../redux/slices/trendsSlice";
 
 
 const TrendingPanel = () => {
-
-    const [movies, setMovies] = useState<IMovie[]>([])
+    const {movies} = useAppSelector(state => state.trends)
+    const dispatch = useAppDispatch()
     const [selected,setSelected] = useState<number>(0)
-    const {isDark} = useAppSelector(state => state.theme)
 
-
+    const showedTrends = 7
 
     useEffect(() => {
-        movieService.getPage().then(({data:{results}})=>setMovies(results.slice(0,5)))
-    }, []);
+        dispatch(trendsActions.getAll(showedTrends))
+    }, [dispatch]);
+
+    const pages = []
+
+    for (let i = 0; i<showedTrends;i++){
+        pages.push(i)
+    }
 
     const changeSelected=(i:number)=>{
         setSelected(i)
     }
 
-    const pages = [0,1,2,3,4]
     return (
-        <div className={`${css.TrendingPanel} ${isDark?css.dark:css.light}`}>
-        <div className={css.TrendingContent}>
-           <div style={{left:`calc(-90vw*${selected})`}}> {movies[selected]&&pages.map(i=><TrendUnit index={i} key={i} movie={movies[i]}/>)}</div>
-        </div>
-            <div className={css.pages}>
-                {pages.map(i=><div className={i===selected?css.selected:''} key={i} onClick={()=>changeSelected(i)}/>)}
-            </div>
-        </div>
+        <div className={css.TrendsPanel}>
+            <div className={css.magicDiv}></div>
+            <div className={css.TrendsContainer}>
 
+                <div style={{left:`calc(-${selected}*80vw)`}} className={css.TrendsContent}>
+                    {movies[selected]&&pages.map(i=><TrendUnit movie={movies[i]} key={i}/>)}
+                </div>
+            </div>
+            <div className={css.pages}>
+                {pages.map(i=><div className={`${selected===i?css.active:''}`} onClick={()=>changeSelected(i)} key={i}></div>)}
+            </div>
+
+        </div>
     );
 };
 

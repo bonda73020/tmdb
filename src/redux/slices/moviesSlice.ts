@@ -1,24 +1,29 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {IMovie} from "../../interfaces/IMovie";
 import {AxiosError} from "axios";
-import {movieService} from "../../services/movieService";
+import {getPageParams, movieService} from "../../services/movieService";
+import {IMoviePage} from "../../interfaces/IMoviePage";
 
 
 interface IState{
     movies:IMovie[]
+    page:number
+    totalPages:number
 }
 
 const initialState:IState={
-    movies:[]
+    movies:[],
+    page: 1,
+    totalPages: null
 }
 
 
-const getAll = createAsyncThunk<IMovie[],void>(
+const getAll = createAsyncThunk<IMoviePage,getPageParams>(
     "movieSlice/getAll",
-    async(_,{rejectWithValue})=>{
+    async({page=1,sortBy='popularity.desc',genres=''},{rejectWithValue})=>{
             try{
-                const {data:{results}} = await movieService.getPage()
-                return results
+                const {data} = await movieService.getPage({page,sortBy,genres})
+                return data
             }
             catch (e){
                 const err = e as AxiosError
@@ -31,11 +36,14 @@ const getAll = createAsyncThunk<IMovie[],void>(
 const movieSlice = createSlice({
     name:"moviesSlice",
     initialState,
-    reducers:{},
+    reducers:{
+    },
     extraReducers:builder =>
         builder
             .addCase(getAll.fulfilled,(state,action)=>{
-                state.movies = action.payload
+                state.movies = action.payload.results
+                state.page = action.payload.page
+                state.totalPages = action.payload.total_pages
             })
 })
 

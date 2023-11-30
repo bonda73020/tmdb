@@ -12,7 +12,7 @@ const Movie: FC<IProps> = ({movie}) => {
     const{title,original_title,poster_path,vote_average} = movie
     return (
         <div className={css.MoviesUnit}>
-            <img src={`${imagesURL}${poster_path}`} alt=""/>
+            <img src={`${imagesURL}${poster_path}`} alt={`${title}`}/>
             <div>
                 <h3>{title}</h3>
             </div>

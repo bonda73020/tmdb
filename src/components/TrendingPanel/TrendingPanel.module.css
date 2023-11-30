@@ -1,99 +1,98 @@
-.TrendingPanel{
-   margin: 0 auto;
-   width: 90vw;
-   font-size: 18pt;
-}
-
-
-.TrendingContent{
-   height:90vh;
-   display: flex;
-   margin: 0 auto;
-   overflow-x: auto;
-   position: relative; z-index: -1;
-}
-
-.TrendingContent::-webkit-scrollbar {
-   width: 0; /* Hide the default scrollbar width */
-}
-
-/* Optional: Customize scrollbar track and thumb appearance */
-.TrendingContent::-webkit-scrollbar-track {
-   background-color: transparent; /* Set scrollbar track color */
-}
-
-.TrendingContent::-webkit-scrollbar-thumb {
-   background-color: transparent; /* Set scrollbar thumb color */
-}
-
-.TrendingContent>div{
-   position: absolute;
-   transition-duration: .8s;
-}
-
-.TrendingUnit{
+.TrendsPanel{
+   width: 80vw;
+   height: calc(80vw/16*9);
+   margin: 2vh auto;
    position: relative;
 }
-.TrendingUnit>div{
-   position: absolute;
-   width: 30vw;
-   top:40vh;
+.TrendsContainer{
+   height: 100%;
+   width: 100%;
+   overflow-x: clip;
+   position: relative;
+   z-index: 1;
+}
+.TrendsContent{
+   height: 100%;
+   width: 100%;
    display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-   align-items: start;
-   color: #F8F9FA;
-   padding: 0 5vw;
-}
-
-.TrendingUnit>img{
+   flex-direction: row;
    position: absolute;
-   width: 90vw;
-   object-fit: cover;
-   mask-image: linear-gradient(90deg, transparent, white,transparent);
+   transition-duration: .7s;
 }
-
 .pages{
+   font-size: 4pt;
    display: flex;
-   margin: 0 auto;
+   position: absolute;
    width: 20vw;
    justify-content: space-around;
-   position: absolute;
-   top:95vh;
    left: 50%;
    transform: translateX(-50%);
+   top:calc(100% - 6em);
+   z-index: 5;
 }
 .pages>div{
-   font-size: 4pt;
-   height: 4em;
    width: 4em;
+   height: 4em;
+   background: rgba(248, 249, 250, 0.5);
    border-radius: 50%;
-   background: rgba(248, 249, 250, 0.8);
-   transition-duration: .7s;
-   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
    cursor: pointer;
+   transition-duration: .7s;
 }
 .pages>div:hover{
-   background: #9f0000;
-   transform: translateY(-.25vh);
-}
-.pages>div.selected{
-   background: rgba(159, 0, 0, 0.5);
    transform: translateY(-.5vh);
 }
-.UnitButton{
+.pages>div.active{
+   transform: translateY(-.5vh);
+   background: #F8F9FA;
+}
+.TrendUnit{
+   height: 100%;
+   width: 100%;
+   flex: 0 0 auto;
+}
+
+
+.TrendUnit>div{
+   position: absolute;
+   z-index: 3;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background: linear-gradient(#3f3f3f 0%,transparent 5%,transparent 95%,#3f3f3f 100%),
+   linear-gradient(90deg,#3f3f3f 0%, transparent 25%, transparent 75%, #3f3f3f 100%);
+}
+.TrendUnit>div>div{
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: center;
+   z-index: 4;
+   color: #F8F9FA;
+   font-size: 16pt;
+}
+.TrendUnit>div>div>div{
+   padding: 0 1vw;
+}
+
+h2{
+   background: rgba(159, 0, 0, 0.8);
+   padding: 1vh 1vw;
+}
+.TrendUnitButton{
    background: #F8F9FA;
    color: #3f3f3f;
-   width: 10vw;
-   text-align: center;
-   padding: 2vh 1vw;
-   margin: 4vh 0;
-   cursor: pointer;
+   padding: 2vh 2vw!important;
+   margin: 1vh 0;
    border-radius: 10px;
+   cursor: pointer;
    transition-duration: .7s;
 }
-.UnitButton:hover{
-   transform: translateY(-1vh);
-   background: rgba(159, 0, 0, 0.5);
+.TrendUnitButton:hover{
+   transform: translateY(-.5vh);
+   background: #9f0000;
    color: #F8F9FA;
 }

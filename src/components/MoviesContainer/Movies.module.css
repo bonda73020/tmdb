@@ -1,9 +1,8 @@
 .MoviesContainer{
     width: 85vw;
-    margin: -2.5vh auto;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    z-index: 5;
     padding: 2vh 2vw;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -28,7 +27,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     font-size: 16pt;
+    transition-duration: .7s;
+    cursor: pointer;
 }
 
 .MoviesUnit>div{
@@ -39,4 +41,10 @@
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     margin-bottom: 2vh;
+
+}
+.MoviesUnit:hover{
+    background: #9f0000;
+    color: #F8F9FA;
+    transform: translateY(-1vh);
 }
