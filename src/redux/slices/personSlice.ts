@@ -1,5 +1,5 @@
 import {IPerson} from "../../interfaces/IPerson";
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {movieService} from "../../services/movieService";
 import {AxiosError} from "axios";
 
@@ -29,11 +29,18 @@ const getInfo = createAsyncThunk(
 const personSlice = createSlice({
     name:'personSlice',
     initialState,
-    reducers:{},
+    reducers:{
+        setInitialInfo:(state, action:PayloadAction<IPerson>)=>{
+            state.person = action.payload
+        }
+    },
     extraReducers:builder =>
         builder
             .addCase(getInfo.fulfilled,(state, action)=>{
-                state.person = action.payload
+                state.person.also_known_as = action.payload.also_known_as
+                state.person.biography = action.payload.biography
+                state.person.imdb_id = action.payload.imdb_id
+                state.person.place_of_birth = action.payload.place_of_birth
             })
 })
 

@@ -34,9 +34,11 @@ const PersonInfo: FC<IProps> = ({person}) => {
             </div>
 
             {known_for&&(
-                <div>
-                    <h3>Known for:</h3>
-                    {known_for.map(i=><Movie movie={i}/>)}
+                <div className={css.bottomPanel}>
+                    <h3>Also known for:</h3>
+                   <div>
+                       {known_for.map(i=><Movie movie={i}/>)}
+                   </div>
                 </div>
             )}
         </div>

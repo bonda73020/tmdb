@@ -47,3 +47,12 @@
     text-indent: 3em;
     text-align: justify;
 }
+h3{
+    font-size: 22pt;
+    padding: 2vh 3vw 2vh;
+}
+.bottomPanel>div{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
