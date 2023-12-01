@@ -8,6 +8,7 @@
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     transition-duration: .7s;
+    border: 3px solid #9f0000;
 }
 
 .Header.light{

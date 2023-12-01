@@ -3,16 +3,18 @@ import {IMovie} from "../../interfaces/IMovie";
 import {imagesURL} from "../../constants/urls";
 import css from './Movies.module.css'
 import {StarsRating} from "../StarsRating/StarsRating";
+import {useNavigate} from "react-router-dom";
 interface IProps {
     movie:IMovie
 }
 
 
 const Movie: FC<IProps> = ({movie}) => {
-    const{title,original_title,poster_path,vote_average} = movie
+    const{title,poster_path,vote_average, id} = movie
+    const navigate = useNavigate()
     return (
-        <div className={css.MoviesUnit}>
-            <img src={`${imagesURL}${poster_path}`} alt={`${title}`}/>
+        <div onClick={()=>navigate(`/movies/${id}`)} className={css.MoviesUnit}>
+            {poster_path&&<img src={`${imagesURL}${poster_path}`} alt={`${title}`}/>}
             <div>
                 <h3>{title}</h3>
             </div>

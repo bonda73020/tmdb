@@ -1,19 +1,24 @@
-import React, {useEffect} from 'react';
+import React, {FC,useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../../hooks/reduxHooks";
 import {movieActions} from "../../redux/slices/moviesSlice";
 import {Movie} from "./Movie";
 import css from './Movies.module.css'
-import {useSearchParams} from "react-router-dom";
+import {SetURLSearchParams, useSearchParams} from "react-router-dom";
 
-const Movies = () => {
+
+interface IProps{
+    query:URLSearchParams,
+    setQuery:SetURLSearchParams
+}
+
+const Movies:FC<IProps> = ({query,setQuery}) => {
 
     const {movies} = useAppSelector(state => state.movies)
     const {isDark} = useAppSelector(state => state.theme)
     const dispatch = useAppDispatch()
 
-    const [query,setQuery] = useSearchParams()
     useEffect(() => {
-        dispatch(movieActions.getAll({page:+query.get('page'),genres:'',sortBy:'popularity.desc'}))
+        dispatch(movieActions.getAll({searchQuery:query.get('searchQuery'), page:+query.get('page'),genres:query.get('genres'),sortBy:`${query.get('sortBy')}.${query.get('sortDirection')}`}))
     }, [dispatch,query]);
 
 

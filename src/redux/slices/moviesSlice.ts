@@ -20,10 +20,16 @@ const initialState:IState={
 
 const getAll = createAsyncThunk<IMoviePage,getPageParams>(
     "movieSlice/getAll",
-    async({page=1,sortBy='popularity.desc',genres=''},{rejectWithValue})=>{
+    async({searchQuery='',page=1,sortBy='popularity.desc',genres=''},{rejectWithValue})=>{
             try{
-                const {data} = await movieService.getPage({page,sortBy,genres})
-                return data
+                if(searchQuery===''){
+                    const {data} = await movieService.getPage({page,sortBy,genres})
+                    return data
+                }
+                else{
+                    const {data} = await movieService.searchByQuery({searchQuery,page})
+                    return data
+                }
             }
             catch (e){
                 const err = e as AxiosError

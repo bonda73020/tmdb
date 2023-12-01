@@ -1,0 +1,49 @@
+.PersonInfoContainer{
+    width: 90vw;
+    padding: 2vh 3vw;
+    margin: 1vh auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    border: 3px solid #9f0000;
+    transition-duration: .7s;
+}
+.PersonInfoContainer.light{
+    background: #F8F9FA;
+    color: #3f3f3f;
+}
+
+.topPanel{
+    display: flex;
+    justify-content: space-around;
+
+    width: 100%;
+}
+.leftPanel{
+    display: flex;
+    width: 40vw;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18pt;
+    padding: 2vw 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+.leftPanel>img{
+    margin: 2vh 0;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+.rightPanel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40vw;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    font-size: 18pt;
+    padding: 2vh 2vw;
+    text-indent: 3em;
+    text-align: justify;
+}

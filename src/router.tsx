@@ -3,20 +3,18 @@ import {MainLayout} from "./layouts/MainLayout";
 import {MoviePage} from "./pages/MoviePage";
 import {MoviesPage} from "./pages/MoviesPage";
 import {GenresPage} from "./pages/GenresPage";
-import {ActorPage} from "./pages/ActorPage";
-import {ActorsPage} from "./pages/ActorsPage";
+import {PersonPage} from "./pages/PersonPage";
+import {PersonsPage} from "./pages/PersonsPage";
 import {SearchPage} from "./pages/SearchPage";
 
 const router = createBrowserRouter([
     {path:'',element:<MainLayout/>,children:[
             {index:true,element:<Navigate to={'movies'}/>},
-            {path:'movies',element:<MoviesPage/>,children:[
-                    {path:':movieId',element:<MoviePage/>}
-                ]},
+            {path:'movies',element:<MoviesPage/>},
+            {path:'movies/:movieId',element:<MoviePage/>},
             {path:'genres',element:<GenresPage/>},
-            {path:'actors',element:<ActorsPage/>,children:[
-                    {path:':actorId',element: <ActorPage/>}
-                ]},
+            {path:'people',element:<PersonsPage/>},
+            {path:'people/:personId',element: <PersonPage/>},
             {path:'search',element:<SearchPage/>}
         ]}
 ])

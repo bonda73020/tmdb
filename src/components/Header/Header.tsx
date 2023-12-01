@@ -14,7 +14,7 @@ const Header = () => {
             <div>
                 <NavLink className={({isActive})=>`${isActive?css.active:''} ${isDark?css.dark:css.light}`} to={'movies'}>Movies</NavLink>
                 <NavLink className={({isActive})=>`${isActive?css.active:''} ${isDark?css.dark:css.light}`} to={'genres'}>Genres</NavLink>
-                <NavLink className={({isActive})=>`${isActive?css.active:''} ${isDark?css.dark:css.light}`} to={'actors'}>Actors</NavLink>
+                <NavLink className={({isActive})=>`${isActive?css.active:''} ${isDark?css.dark:css.light}`} to={'people'}>People</NavLink>
                 <NavLink className={({isActive})=>`${isActive?css.active:''} ${isDark?css.dark:css.light}`} to={'search'}>Search</NavLink>
             </div>
             <div>

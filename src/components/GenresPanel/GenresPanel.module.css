@@ -1,0 +1,36 @@
+.GenresPanel{
+    width: 85vw;
+    margin: 1vh auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2vh 3vw;
+    border-radius: 10px;
+    transition-duration: .7s;
+    border: 3px solid #9f0000;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+.GenresPanel.light{
+    background: #F8F9FA;
+    color: #3f3f3f;
+}
+.GenresPanel.dark>.GenresLabel{
+    color: #F8F9FA;
+}
+.GenresLabel{
+    border: 2px solid #9f0000;
+    padding: 2vh 2vw;
+    font-size: 16pt;
+    margin: 1vh .5vw;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    transition-duration: .7s;
+    cursor: pointer;
+}
+.GenresLabel.active{
+    background: #9f0000;
+    color: #F8F9FA;
+}
+.GenresLabel:hover{
+    transform: translateY(-1vh);
+}

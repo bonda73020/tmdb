@@ -9,12 +9,16 @@ const genres = "/3/genre/movie/list"
 const findByIdPage = '3/movie'
 const credits = '/credits'
 const search = '3/search/movie'
+const personSearch = "/3/search/person"
+const personById=(id:string)=>'3/person/'+id
 const urls = {
     moviesPage:moviesPage,
     movieById:(id:string):string=>`${findByIdPage}/${id}`,
     genres:genres,
     creditsById:(id:string):string=>`${findByIdPage}/${id}/${credits}`,
-    search:search
+    search:search,
+    personSearch,
+    personById
 }
 
 
