@@ -11,7 +11,8 @@ interface IProps{
 
 const Paginator:FC<IProps> = ({query,setQuery}) => {
     const location = useLocation().pathname
-    const{movies:{totalPages:moviesTotalPages},personSearch:{totalPages:personsTotalPages}}=useAppSelector(state=>state)
+    const {totalPages:moviesTotalPages}=useAppSelector(state => state.movies)
+    const {totalPages:personsTotalPages}=useAppSelector(state => state.personSearch)
     const{isDark}=useAppSelector(state => state.theme)
     const [prevNext,setPrevNext] = useState<[boolean,boolean]>([false,false])
 

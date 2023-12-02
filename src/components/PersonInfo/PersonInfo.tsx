@@ -11,7 +11,6 @@ interface IProps {
 
 const PersonInfo: FC<IProps> = ({person}) => {
     const {name,profile_path,gender,original_name,known_for_department, known_for,biography,birthday,place_of_birth} = person
-    console.log(known_for)
     const genders=['Not set / not specified','Female','Male','Non-binary']
 
     return (

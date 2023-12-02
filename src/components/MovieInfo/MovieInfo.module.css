@@ -1,0 +1,77 @@
+.MovieInfoContainer{
+}
+.MovieInfo{
+    width: 85vw;
+    transition-duration: .7s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2vh auto 0;
+    padding: 3vh 3vw;
+
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    border: 3px solid #9f0000;
+}
+.BigPoster{
+    width: 100%;
+    mask-image: linear-gradient(90deg, transparent, white, transparent);
+    border-color: #9f0000;
+    border-style: solid;
+    border-width: 4px 0;
+}
+.infoContainer{
+    width: fit-content;
+    padding: 2vh 5vw;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    border: 3px solid #9f0000;
+    transition-duration: .7s;
+    text-indent: 2em;
+    margin: 2vh 0
+}
+.infoContainer>div{
+    font-size: 18pt;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+h2{
+    color: #F8F9FA;
+    margin-bottom: 2vh;
+    text-align: left;
+}
+
+.light{
+    background: #F8F9FA;
+    color: #3f3f3f;
+}
+.dark{
+    color: #F8F9FA;
+}
+.genreBadgeContainer>div{
+    background: rgba(159, 0, 0, 0.8);
+    text-indent: 0;
+    color: #F8F9FA;
+    padding: 1.5vh 2vw;
+    margin: 1vh .5vw;
+    border-radius: 10px;
+    transition-duration: .7s;
+    cursor: pointer;
+}
+.genreBadgeContainer>div:hover{
+    background: #9f0000;
+    transform: translateY(-1vh);
+}
+.castContainer>div>a{
+    text-indent: 0;
+    background: rgba(159, 0, 0, 0.5);
+    color: #F8F9FA;
+    margin: 0 .5vw 1vh;
+}
+.castContainer>div>a:hover{
+    background: #9f0000;
+    transform: translateY(-1vh);
+}

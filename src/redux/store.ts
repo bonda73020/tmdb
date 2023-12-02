@@ -5,6 +5,7 @@ import {trendsReducer} from "./slices/trendsSlice";
 import {genreReducer} from "./slices/genresSlice";
 import {personSearchReducer} from "./slices/personSearchSlice";
 import {personReducer} from "./slices/personSlice";
+import {singleMovieReducer} from "./slices/singleMovieSlice";
 
 const store = configureStore({
     reducer:{
@@ -13,7 +14,8 @@ const store = configureStore({
         trends:trendsReducer,
         genres:genreReducer,
         personSearch:personSearchReducer,
-        person:personReducer
+        person:personReducer,
+        singleMovie:singleMovieReducer
     }
 })
 

@@ -11,6 +11,9 @@
     background: #F8F9FA;
     color: #3f3f3f;
 }
+.dark{
+    color: #F8F9FA;
+}
 
 .topPanel{
     display: flex;

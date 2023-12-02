@@ -4,6 +4,7 @@ import {imagesURL} from "../../constants/urls";
 import css from './Movies.module.css'
 import {StarsRating} from "../StarsRating/StarsRating";
 import {useNavigate} from "react-router-dom";
+
 interface IProps {
     movie:IMovie
 }
@@ -12,8 +13,13 @@ interface IProps {
 const Movie: FC<IProps> = ({movie}) => {
     const{title,poster_path,vote_average, id} = movie
     const navigate = useNavigate()
+
+    const handleClick=()=>{
+        navigate(`/movies/${id}`)
+    }
+
     return (
-        <div onClick={()=>navigate(`/movies/${id}`)} className={css.MoviesUnit}>
+        <div onClick={()=>handleClick()} className={css.MoviesUnit}>
             {poster_path&&<img src={`${imagesURL}${poster_path}`} alt={`${title}`}/>}
             <div>
                 <h3>{title}</h3>
