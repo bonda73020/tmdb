@@ -5,6 +5,7 @@ import {Paginator} from "../components/Paginator/Paginator";
 import {PersonContainer} from "../components/PersonPanel/PersonContainer";
 
 const PersonsPage = () => {
+    window.scrollTo(0,0)
     const [query,setQuery] = useSearchParams({'page':'1'})
     return (
         <div>

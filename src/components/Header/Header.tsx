@@ -4,6 +4,7 @@ import {NavLink} from "react-router-dom";
 import css from './Header.module.css'
 import {ThemeSwitcher} from "./ThemeSwitcher/ThemeSwitcher";
 import {useAppSelector} from "../../hooks/reduxHooks";
+import {UserIcon} from "../UserIcon/UserIcon";
 const Header = () => {
 
     const {isDark} = useAppSelector(state => state.theme)
@@ -19,6 +20,9 @@ const Header = () => {
             </div>
             <div>
                 <ThemeSwitcher></ThemeSwitcher>
+            </div>
+            <div>
+                <UserIcon></UserIcon>
             </div>
         </div>
     );
