@@ -1,4 +1,5 @@
 import {FC} from 'react';
+
 import {IPerson} from "../../interfaces/IPerson";
 import {imagesURL} from "../../constants/urls";
 import css from './PersonInfo.module.css'
@@ -10,7 +11,7 @@ interface IProps {
 
 
 const PersonInfo: FC<IProps> = ({person}) => {
-    const {name,profile_path,gender,original_name,known_for_department, known_for,biography,birthday,place_of_birth} = person
+    const {name,profile_path,gender,known_for_department, known_for,biography,birthday,place_of_birth} = person
     const genders=['Not set / not specified','Female','Male','Non-binary']
 
     return (

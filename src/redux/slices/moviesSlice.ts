@@ -1,7 +1,8 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {IMovie} from "../../interfaces/IMovie";
 import {AxiosError} from "axios";
-import {getPageParams, movieService} from "../../services/movieService";
+
+import {IMovie} from "../../interfaces/IMovie";
+import {IMoviePageParams, movieService} from "../../services/movieService";
 import {IMoviePage} from "../../interfaces/IMoviePage";
 
 
@@ -18,7 +19,7 @@ const initialState:IState={
 }
 
 
-const getAll = createAsyncThunk<IMoviePage,getPageParams>(
+const getAll = createAsyncThunk<IMoviePage,IMoviePageParams>(
     "movieSlice/getAll",
     async({searchQuery='',page=1,sortBy='popularity.desc',genres=''},{rejectWithValue})=>{
             try{

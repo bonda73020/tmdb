@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
+
 import {useAppDispatch, useAppSelector} from "../../hooks/reduxHooks";
 import {singleMovieActions} from "../../redux/slices/singleMovieSlice";
 import {MovieInfo} from "./MovieInfo";
@@ -21,7 +22,7 @@ const MovieInfoContainer = () => {
                 return true
             }
         })
-    }, [movie]);
+    }, [movie,movieId]);
     return (
         <div>
             {(!loading)?<MovieInfo movie={movie}/>:<h2>Loading...</h2>}

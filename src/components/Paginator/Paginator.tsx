@@ -1,5 +1,6 @@
-import React, {FC,useEffect, useState} from 'react';
-import {SetURLSearchParams, useLocation, useSearchParams} from "react-router-dom";
+import React, {FC, useEffect, useState} from 'react';
+import {SetURLSearchParams, useLocation} from "react-router-dom";
+
 import css from './Paginator.module.css'
 import {useAppSelector} from "../../hooks/reduxHooks";
 
@@ -17,7 +18,7 @@ const Paginator:FC<IProps> = ({query,setQuery}) => {
     const [prevNext,setPrevNext] = useState<[boolean,boolean]>([false,false])
 
     const page = +query.get('page')
-    const [totalPages, _] = useState<number>(location==='/people'?personsTotalPages:moviesTotalPages)
+    const [totalPages,] = useState<number>(location==='/people'?personsTotalPages:moviesTotalPages)
 
 
     useEffect(() => {

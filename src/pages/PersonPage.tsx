@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {PersonInfoContainer} from "../components/PersonInfo/PersonInfoContainer";
 
 const PersonPage = () => {

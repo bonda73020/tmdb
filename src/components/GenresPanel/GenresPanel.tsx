@@ -1,5 +1,6 @@
 import {FC, useEffect} from 'react';
 import {SetURLSearchParams} from "react-router-dom";
+
 import {useAppDispatch, useAppSelector} from "../../hooks/reduxHooks";
 import {genreActions} from "../../redux/slices/genresSlice";
 import {GenresLabel} from "./GenresLabel";
@@ -23,9 +24,7 @@ const GenresPanel: FC<IProps> = ({query,setQuery}) => {
 
     const genresList:string[] = query.get('genres')?query.get('genres').split(','):[]
 
-    useEffect(() => {
-        const genresList:string[] = query.get('genres')?query.get('genres').split(','):[]
-    }, [query]);
+
 
     const updateGenres=(i:number)=>{
         const genresList:string[] = query.get('genres')?query.get('genres').split(','):[]

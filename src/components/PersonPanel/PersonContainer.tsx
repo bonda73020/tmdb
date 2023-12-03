@@ -1,4 +1,5 @@
 import {FC, useEffect} from 'react';
+
 import {useAppDispatch, useAppSelector} from "../../hooks/reduxHooks";
 import {personSearchActions} from "../../redux/slices/personSearchSlice";
 import css from './PersonPanel.module.css'

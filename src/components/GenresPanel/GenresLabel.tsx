@@ -1,4 +1,5 @@
 import {FC} from 'react';
+
 import {IGenre} from "../../interfaces/IGenre";
 import css from './GenresPanel.module.css'
 interface IProps {

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
+
 import {useAppDispatch, useAppSelector} from "../../hooks/reduxHooks";
-import {useDispatch} from "react-redux";
 import {personActions} from "../../redux/slices/personSlice";
 import {PersonInfo} from "./PersonInfo";
 import css from './PersonInfo.module.css'
@@ -16,7 +16,7 @@ const PersonInfoContainer = () => {
 
     useEffect(() => {
         dispatch(personActions.getInfo(personId))
-    }, [dispatch]);
+    }, [dispatch,personId]);
 
     useEffect(() => {
         setLoading(()=>{
@@ -27,7 +27,7 @@ const PersonInfoContainer = () => {
                 return true
             }
         })
-    }, [person]);
+    }, [person,personId]);
 
 
     return (

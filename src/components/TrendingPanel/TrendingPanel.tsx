@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+
 import css from './TrendingPanel.module.css'
 import {TrendUnit} from "./TrendUnit";
 import {useAppDispatch, useAppSelector} from "../../hooks/reduxHooks";

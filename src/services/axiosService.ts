@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import {token} from "../constants/token";
 import {moviesBaseURL} from "../constants/urls";
 

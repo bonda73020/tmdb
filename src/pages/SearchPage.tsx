@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {MoviesContainer} from "../components/MoviesContainer/MoviesContainer";
 
 

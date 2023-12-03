@@ -1,8 +1,9 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 
 import css from './ThemeSwitcher.module.css'
 import {useAppDispatch, useAppSelector} from "../../../hooks/reduxHooks";
 import {themeActions} from "../../../redux/slices/themeSlice";
+
 const ThemeSwitcher = () => {
     const {isDark} = useAppSelector(state => state.theme)
     const dispatch = useAppDispatch()

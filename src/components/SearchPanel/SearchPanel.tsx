@@ -1,9 +1,10 @@
 import {FC} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
+import {SetURLSearchParams} from "react-router-dom";
+
 import {searchValidator} from "../../validators/SearchValidator";
 import {useAppSelector} from "../../hooks/reduxHooks";
-import {SetURLSearchParams} from "react-router-dom";
 import css from './SearchPanel.module.css'
 
 interface IProps {

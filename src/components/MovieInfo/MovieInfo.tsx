@@ -1,9 +1,10 @@
 import {FC, useEffect} from 'react';
+import {NavLink, useNavigate} from "react-router-dom";
+
 import {IMovie} from "../../interfaces/IMovie";
 import css from './MovieInfo.module.css'
 import {imagesURL} from "../../constants/urls";
 import {useAppDispatch, useAppSelector} from "../../hooks/reduxHooks";
-import {NavLink, useNavigate} from "react-router-dom";
 import {StarsRating} from "../StarsRating/StarsRating";
 import {singleMovieActions} from "../../redux/slices/singleMovieSlice";
 

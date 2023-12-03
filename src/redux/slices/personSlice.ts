@@ -1,7 +1,9 @@
 import {IPerson} from "../../interfaces/IPerson";
+import {AxiosError} from "axios";
+
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {movieService} from "../../services/movieService";
-import {AxiosError} from "axios";
+
 
 interface IState{
     person:IPerson

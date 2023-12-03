@@ -9,7 +9,7 @@ import {IMovie} from "../interfaces/IMovie";
 import {ICredits} from "../interfaces/ICredits";
 
 
-interface getPageParams{
+interface IMoviePageParams {
     page:number,
     genres?:string,
     sortBy?:string,
@@ -17,9 +17,9 @@ interface getPageParams{
 }
 
 const movieService = {
-    getPage:({page=1,genres='',sortBy=''}:getPageParams):IResType<IMoviePage>=>moviesAxiosService.get(urls.moviesPage,{params:{page:page,with_genres:genres,sort_by:sortBy}}),
+    getPage:({page=1,genres='',sortBy=''}:IMoviePageParams):IResType<IMoviePage>=>moviesAxiosService.get(urls.moviesPage,{params:{page:page,with_genres:genres,sort_by:sortBy}}),
     getGenres:():IResType<{genres:IGenre[]}>=>moviesAxiosService.get(urls.genres),
-    searchByQuery:({searchQuery='',page=1}:getPageParams):IResType<IMoviePage>=>moviesAxiosService.get(urls.search,{params:{query:searchQuery,page:page}}),
+    searchByQuery:({searchQuery='',page=1}:IMoviePageParams):IResType<IMoviePage>=>moviesAxiosService.get(urls.search,{params:{query:searchQuery,page:page}}),
     searchPerson:({searchQuery='',page=1}):IResType<IPersonSearchPage>=>moviesAxiosService.get(urls.personSearch,{params:{query:searchQuery,page:page}}),
     getPersonInfo:(id:string):IResType<IPerson>=>moviesAxiosService.get(urls.personById(id)),
     getMovieInfo:(id:string):IResType<IMovie>=>moviesAxiosService.get(urls.movieById(id)),
@@ -29,4 +29,4 @@ const movieService = {
 export {
     movieService
 }
-export type {getPageParams}
+export type {IMoviePageParams}

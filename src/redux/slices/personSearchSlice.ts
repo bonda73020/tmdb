@@ -1,8 +1,10 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {AxiosError} from "axios";
+
 import {IPersonSearchPage} from "../../interfaces/IPersonSearchPage";
 import {IPerson} from "../../interfaces/IPerson";
 import {movieService} from "../../services/movieService";
-import {AxiosError} from "axios";
+
 
 
 interface IState{

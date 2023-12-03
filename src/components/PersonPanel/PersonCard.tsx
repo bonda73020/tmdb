@@ -1,8 +1,10 @@
 import {FC} from 'react';
+import {useNavigate} from "react-router-dom";
+
 import {IPerson} from "../../interfaces/IPerson";
 import {imagesURL} from "../../constants/urls";
 import css from './PersonPanel.module.css'
-import {useNavigate} from "react-router-dom";
+
 
 interface IProps {
     person:IPerson

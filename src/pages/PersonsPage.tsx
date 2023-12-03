@@ -1,6 +1,7 @@
 import React from 'react';
-import {SearchPanel} from "../components/SearchPanel/SearchPanel";
 import {useSearchParams} from "react-router-dom";
+
+import {SearchPanel} from "../components/SearchPanel/SearchPanel";
 import {Paginator} from "../components/Paginator/Paginator";
 import {PersonContainer} from "../components/PersonPanel/PersonContainer";
 

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {Movies} from "./Movies";
 import {useLocation, useSearchParams} from "react-router-dom";
+
+import {Movies} from "./Movies";
 import {Paginator} from "../Paginator/Paginator";
 import {GenresPanel} from "../GenresPanel/GenresPanel";
 import {SortByPanel} from "../SortBy/SortByPanel";
